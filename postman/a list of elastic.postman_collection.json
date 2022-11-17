@@ -15206,12 +15206,12 @@
 			"name": "CRUD",
 			"item": [
 				{
-					"name": "Add index alias API Copy",
+					"name": "Add index",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "https://172.26.208.1:9200/:index/_alias/:alias",
+							"raw": "https://172.26.208.1:9200/:index",
 							"protocol": "https",
 							"host": [
 								"172",
@@ -15221,9 +15221,7 @@
 							],
 							"port": "9200",
 							"path": [
-								":index",
-								"_alias",
-								":alias"
+								":index"
 							],
 							"query": [
 								{
@@ -15242,88 +15240,14 @@
 							"variable": [
 								{
 									"key": "index",
-									"value": "kibana_sample_data_logs",
+									"value": "myindex",
 									"description": "(Required, string) Comma-separated list or wildcard expression of index names to add to the alias."
-								},
-								{
-									"key": "alias",
-									"value": "logs",
-									"description": "(Required, string) Name of the index alias to create or update"
 								}
 							]
 						},
 						"description": "Creates or updates an index alias"
 					},
-					"response": [
-						{
-							"name": "Add index alias API",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"url": {
-									"raw": "https://172.26.208.1:9200/:index/_alias/:alias",
-									"protocol": "https",
-									"host": [
-										"172",
-										"26",
-										"208",
-										"1"
-									],
-									"port": "9200",
-									"path": [
-										":index",
-										"_alias",
-										":alias"
-									],
-									"query": [
-										{
-											"key": "master_timeout",
-											"value": null,
-											"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
-											"disabled": true
-										},
-										{
-											"key": "timeout",
-											"value": null,
-											"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
-											"disabled": true
-										}
-									],
-									"variable": [
-										{
-											"key": "index",
-											"value": "kibana_sample_data_logs",
-											"description": "(Required, string) Comma-separated list or wildcard expression of index names to add to the alias."
-										},
-										{
-											"key": "alias",
-											"value": "logs",
-											"description": "(Required, string) Name of the index alias to create or update"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "content-type",
-									"value": "application/json; charset=UTF-8"
-								},
-								{
-									"key": "content-encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "content-length",
-									"value": "47"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"acknowledged\": true\n}"
-						}
-					]
+					"response": []
 				},
 				{
 					"name": "Create",
@@ -15332,7 +15256,120 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"doc\":{\"name\":\"john\"}\r\n}",
+							"raw": "{ \r\n    \"first_name\" : \"Jean\",\r\n    \"last_name\" : \"Dupont\",\r\n    \"age\" :25,\r\n    \"about\" :\"I'm a data engineer\",\r\n    \"interests\": [ \"sports\", \"music\" ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/:index/_doc",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								":index",
+								"_doc"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "index",
+									"value": "myindex"
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"doc\": { \r\n    \"first_name\" : \"Jean\",\r\n    \"last_name\" : \"Dupont\",\r\n    \"age\" :25,\r\n    \"about\" :\"I'm a data engineer\",\r\n    \"interests\": [ \"sports\", \"music\" ]\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -15431,11 +15468,13 @@
 							"variable": [
 								{
 									"key": "index",
-									"value": "test"
+									"value": "myindex",
+									"description": "(Required, string) Name of the target index. By default, the index is created automatically if it doesn’t exist"
 								},
 								{
 									"key": "_id",
-									"value": "1"
+									"value": "1",
+									"description": "(Required, string) Unique identifier for the document to be updated"
 								}
 							]
 						},
@@ -15552,7 +15591,7 @@
 							"variable": [
 								{
 									"key": "index",
-									"value": "testing"
+									"value": "myindex"
 								}
 							]
 						},
@@ -15561,13 +15600,16 @@
 					"response": []
 				},
 				{
-					"name": "Update",
+					"name": "List index Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \"doc\": {\r\n  \"@timestamp\": \"2099-11-15T13:12:00\",\r\n  \"message\": \"GET /search HTTP/1.1 200 1070000\",\r\n  \"user\": {\r\n    \"id\": \"kimchy2\"\r\n  }\r\n}\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -15575,7 +15617,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://172.26.208.1:9200/:index/_update/:_id",
+							"raw": "https://172.26.208.1:9200/_cat/indices",
 							"protocol": "https",
 							"host": [
 								"172",
@@ -15585,9 +15627,114 @@
 							],
 							"port": "9200",
 							"path": [
-								":index",
-								"_update",
-								":_id"
+								"_cat",
+								"indices"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Deleet index",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/:index",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								":index"
 							],
 							"query": [
 								{
@@ -15666,13 +15813,7 @@
 							"variable": [
 								{
 									"key": "index",
-									"value": "testing",
-									"description": "(Required, string) Name of the target index. By default, the index is created automatically if it doesn’t exist"
-								},
-								{
-									"key": "_id",
-									"value": "Fty1hIQBdjP-sUMCg-cq",
-									"description": "(Required, string) Unique identifier for the document to be updated"
+									"value": "myindex"
 								}
 							]
 						},
@@ -15683,11 +15824,11 @@
 				{
 					"name": "replace",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \"doc\": {\r\n  \"user\": {\r\n    \"id\": \"kimchy3\"\r\n  }\r\n}\r\n}",
+							"raw": "{\r\n  \"doc\": {\r\n    \"name\": \"new_name\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -15695,7 +15836,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://172.26.208.1:9200/:index/_update/:_id",
+							"raw": "https://172.26.208.1:9200/:index/_doc/:_id",
 							"protocol": "https",
 							"host": [
 								"172",
@@ -15706,7 +15847,7 @@
 							"port": "9200",
 							"path": [
 								":index",
-								"_update",
+								"_doc",
 								":_id"
 							],
 							"query": [
@@ -15795,6 +15936,302 @@
 							]
 						},
 						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete index movies2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/:index",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								":index"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "index",
+									"value": "movies2"
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Add index movies",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://172.26.208.1:9200/:index",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								":index"
+							],
+							"query": [
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "index",
+									"value": "movies2",
+									"description": "(Required, string) Comma-separated list or wildcard expression of index names to add to the alias."
+								}
+							]
+						},
+						"description": "Creates or updates an index alias"
+					},
+					"response": []
+				},
+				{
+					"name": "change mapping",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"mappings\" : {\r\n   \"properties\" : {\r\n          \"fields\" : {\r\n            \"properties\" : {\r\n              \"actors\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"raw\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"index\" : false\r\n                  }\r\n                }\r\n              },\r\n              \"directors\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"raw\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"index\" : false\r\n                  }\r\n                }\r\n              },\r\n              \"genres\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"raw\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"index\" : false\r\n                  }\r\n                }\r\n              },\r\n              \"image_url\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"raw\" : {\r\n\t\t\t\t\t\"type\" : \"text\",\r\n\t\t\t\t\t\"index\" : false\r\n\t\t\t\t\t}\r\n                }\r\n              },\r\n              \"plot\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"keyword\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"ignore_above\" : 256\r\n                  }\r\n                }\r\n              },\r\n              \"rank\" : {\r\n                \"type\" : \"long\"\r\n              },\r\n              \"rating\" : {\r\n                \"type\" : \"float\"\r\n              },\r\n              \"release_date\" : {\r\n                \"type\" : \"date\"\r\n              },\r\n              \"running_time_secs\" : {\r\n                \"type\" : \"long\"\r\n              },\r\n              \"title\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"keyword\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"ignore_above\" : 256\r\n                  }\r\n                }\r\n              },\r\n              \"year\" : {\r\n                \"type\" : \"long\"\r\n              }\r\n            }\r\n          },\r\n          \"id\" : {\r\n            \"type\" : \"text\",\r\n            \"fields\" : {\r\n              \"keyword\" : {\r\n                \"type\" : \"keyword\",\r\n                \"ignore_above\" : 256\r\n              }\r\n            }\r\n          },\r\n          \"type\" : {\r\n            \"type\" : \"text\",\r\n            \"fields\" : {\r\n              \"keyword\" : {\r\n                \"type\" : \"keyword\",\r\n                \"ignore_above\" : 256\r\n              }\r\n            }\r\n          }\r\n        }\r\n\t}\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/:index/",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								":index",
+								""
+							],
+							"query": [
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "index",
+									"value": "movies2",
+									"description": "(Required, string) Comma-separated list or wildcard expression of index names to add to the alias."
+								}
+							]
+						},
+						"description": "Creates or updates an index alias"
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk movie2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/node/formation_simplon/simplon-elasticsearch/data/Nouveau dossier/movies_elastic2.json"
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_bulk",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_bulk"
+							],
+							"query": [
+								{
+									"key": "pipeline",
+									"value": null,
+									"description": "(Optional, string) ID of the pipeline to use to preprocess incoming documents",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, string) True or false to return the _source field or not, or a list of fields to return",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, string) A comma-separated list of source fields to exclude from the response.\n\nYou can also use this parameter to exclude fields from the subset specified in _source_includes query parameter.\n\nIf the _source parameter is false, this parameter is ignored.",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, string) A comma-separated list of source fields to include in the response.\n\nIf this parameter is specified, only these source fields are returned. You can exclude fields from this subset using the _source_excludes query parameter.\n\nIf the _source parameter is false, this parameter is ignored",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Performs multiple indexing or delete operations in a single API call. This reduces overhead and can greatly increase indexing speed."
 					},
 					"response": []
 				}
