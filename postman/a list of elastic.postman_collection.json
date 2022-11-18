@@ -16102,7 +16102,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"mappings\" : {\r\n   \"properties\" : {\r\n          \"fields\" : {\r\n            \"properties\" : {\r\n              \"actors\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"raw\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"index\" : false\r\n                  }\r\n                }\r\n              },\r\n              \"directors\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"raw\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"index\" : false\r\n                  }\r\n                }\r\n              },\r\n              \"genres\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"raw\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"index\" : false\r\n                  }\r\n                }\r\n              },\r\n              \"image_url\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"raw\" : {\r\n\t\t\t\t\t\"type\" : \"text\",\r\n\t\t\t\t\t\"index\" : false\r\n\t\t\t\t\t}\r\n                }\r\n              },\r\n              \"plot\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"keyword\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"ignore_above\" : 256\r\n                  }\r\n                }\r\n              },\r\n              \"rank\" : {\r\n                \"type\" : \"long\"\r\n              },\r\n              \"rating\" : {\r\n                \"type\" : \"float\"\r\n              },\r\n              \"release_date\" : {\r\n                \"type\" : \"date\"\r\n              },\r\n              \"running_time_secs\" : {\r\n                \"type\" : \"long\"\r\n              },\r\n              \"title\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"keyword\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"ignore_above\" : 256\r\n                  }\r\n                }\r\n              },\r\n              \"year\" : {\r\n                \"type\" : \"long\"\r\n              }\r\n            }\r\n          },\r\n          \"id\" : {\r\n            \"type\" : \"text\",\r\n            \"fields\" : {\r\n              \"keyword\" : {\r\n                \"type\" : \"keyword\",\r\n                \"ignore_above\" : 256\r\n              }\r\n            }\r\n          },\r\n          \"type\" : {\r\n            \"type\" : \"text\",\r\n            \"fields\" : {\r\n              \"keyword\" : {\r\n                \"type\" : \"keyword\",\r\n                \"ignore_above\" : 256\r\n              }\r\n            }\r\n          }\r\n        }\r\n\t}\r\n}\r\n",
+							"raw": "{\r\n\"mappings\" : {\r\n   \"properties\" : {\r\n          \"fields\" : {\r\n            \"properties\" : {\r\n              \"actors\" :{\r\n                \"type\" : \"keyword\"\r\n              },\r\n              \"directors\" : {\r\n                \"type\" : \"keyword\"\r\n              },\r\n              \"genres\" : {\r\n                \"type\" : \"keyword\"\r\n              },\r\n              \"image_url\" : {\r\n                \"type\" : \"text\",\r\n                \"fields\" : {\r\n                  \"raw\" : {\r\n\t\t\t\t\t\"type\" : \"text\",\r\n\t\t\t\t\t\"index\" : false\r\n\t\t\t\t\t}\r\n                }\r\n              },\r\n              \"plot\" : {\r\n                \"type\" : \"text\",\r\n                \"fielddata\" : true,\r\n                \"fields\" : {\r\n                  \"keyword\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"ignore_above\" : 256\r\n                  }\r\n                }\r\n              },\r\n              \"rank\" : {\r\n                \"type\" : \"long\"\r\n              },\r\n              \"rating\" : {\r\n                \"type\" : \"float\"\r\n              },\r\n              \"release_date\" : {\r\n                \"type\" : \"date\"\r\n              },\r\n              \"running_time_secs\" : {\r\n                \"type\" : \"long\"\r\n              },\r\n              \"title\" : {\r\n                \"type\" : \"text\",\r\n                \"fielddata\" : true,\r\n                \"fields\" : {\r\n                  \"keyword\" : {\r\n                    \"type\" : \"keyword\",\r\n                    \"ignore_above\" : 256\r\n                  }\r\n                }\r\n              },\r\n              \"year\" : {\r\n                \"type\" : \"long\"\r\n              }\r\n            }\r\n          },\r\n          \"id\" : {\r\n            \"type\" : \"text\",\r\n            \"fields\" : {\r\n              \"keyword\" : {\r\n                \"type\" : \"keyword\",\r\n                \"ignore_above\" : 256\r\n              }\r\n            }\r\n          },\r\n          \"type\" : {\r\n            \"type\" : \"text\",\r\n            \"fields\" : {\r\n              \"keyword\" : {\r\n                \"type\" : \"keyword\",\r\n                \"ignore_above\" : 256\r\n              }\r\n            }\r\n          }\r\n        }\r\n\t}\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -16232,6 +16232,2371 @@
 							]
 						},
 						"description": "Performs multiple indexing or delete operations in a single API call. This reduces overhead and can greatly increase indexing speed."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "aggregate",
+			"item": [
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&filter_path=hits.hits",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": "filter_path",
+									"value": "hits.hits"
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "multiple aggs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\": 0,\r\n    \"aggs\":{\r\n        \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}},\r\n        \"avg_year\": {\"avg\": {\"field\":\"fields.year\"}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "multiple aggs imbrique",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"annee-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.year\",\r\n        \"order\": { \"avg_rating\": \"desc\" }\r\n      },\r\n      \"aggs\": {\r\n       \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}}\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "multiple aggs imbrique Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"annee-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.year\",\r\n        \"order\": { \"avg_rating\": \"desc\" }\r\n      },\r\n      \"aggs\": {\r\n       \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}}\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "film par an",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"movies_by_year\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.year\"}\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "note/rang lucas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\": 0,\r\n    \"query\":{\r\n        \"bool\": {\r\n            \"must\": [\r\n                {\r\n                    \"match_phrase\": {\r\n                        \"fields.directors\": \"George Lucas\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    },\r\n    \"aggs\":{\r\n        \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}},\r\n        \"avg_rank\": {\"avg\": {\"field\":\"fields.rank\"}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "note moyenne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\": 0,\r\n    \"aggs\":{\r\n        \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "note moyenne par année",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"annee-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.year\",\r\n        \"order\": { \"avg_rating\": \"desc\" }\r\n      },\r\n      \"aggs\": {\r\n       \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}}\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "note min/max/moy par an",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"annee-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.year\"\r\n      },\r\n      \"aggs\": {\r\n       \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}},\r\n        \"min-rating\": {\"min\": {\"field\":\"fields.rating\"}},\r\n        \"max_rating\": {\"max\": {\"field\":\"fields.rating\"}}\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "note min/max/moy par an ordonne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"size\": 0,\r\n  \"aggs\": {\r\n    \"annee-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.year\",\r\n        \"order\": { \"avg_rating\": \"desc\" }\r\n      },\r\n      \"aggs\": {\r\n       \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}}\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "nb film par transhe de note",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"size\": 0,\r\n  \"aggs\": {\r\n    \"annee-agg\": {\r\n      \"range\": {\r\n        \"field\": \"fields.rating\",\r\n        \"ranges\": [\r\n          { \"from\": 0, \"to\": 0.9 },\r\n          { \"from\": 1, \"to\": 1.9 },\r\n          { \"from\": 2, \"to\": 2.9 },\r\n          { \"from\": 3, \"to\": 3.9 },\r\n          { \"from\": 4, \"to\": 4.9 },\r\n          { \"from\": 5, \"to\": 5.9 },\r\n          { \"from\": 6, \"to\": 6.9 },\r\n          { \"from\": 7, \"to\": 7.9 },\r\n          { \"from\": 8, \"to\": 8.9 },\r\n          { \"from\": 9, \"to\": 10 }\r\n        ]\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "nb films par genre",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"genre-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.genres\"\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "nb films par réalisateur",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"genre-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.directors\"\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "note (rating) moyenne, le rang min et max, des films par acteur",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"genre-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.directors\"\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Nombre de réalisateurs distincts pour les films d’aventure",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"genre-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.directors\"\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Termes les plus utilisés (agrégat : significant_terms) dans les descriptions des films de George Lucas.",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n   \"query\":{\r\n        \"bool\": {\r\n            \"must\": [\r\n                {\r\n                    \"match_phrase\": {\r\n                        \"fields.directors\": \"George Lucas\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n   },\r\n  \"aggs\": {\r\n    \"terms-agg\": {\r\n      \"significant_terms\": {\r\n        \"field\": \"fields.plot\"\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n\r\n\r\n                ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Donner la note moyenne par genre,",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"annee-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.genres\"\r\n      },\r\n      \"aggs\": {\r\n        \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}},\r\n        \"min-rating\": {\"min\": {\"field\":\"fields.rating\"}},\r\n        \"max_rating\": {\"max\": {\"field\":\"fields.rating\"}}\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Donner le classement moyen des films par an et les trier par ordre ascendant,",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"annee-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.year\",\r\n        \"order\": { \"avg_rating\": \"asc\" }\r\n      },\r\n      \"aggs\": {\r\n       \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}},\r\n        \"min-rating\": {\"min\": {\"field\":\"fields.rating\"}},\r\n        \"max_rating\": {\"max\": {\"field\":\"fields.rating\"}}\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Donner le rang moyen du film et la note moyenne du film pour chaque réalisateur. Trier le résultat de manière décroissante en moyenne de rating",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"annee-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.directors\",\r\n        \"order\": { \"avg_rating\": \"desc\" }\r\n      },\r\n      \"aggs\": {\r\n       \"avg_rating\": {\"avg\": {\"field\":\"fields.rating\"}},\r\n        \"avg_-rank\": {\"avg\": {\"field\":\"fields.rank\"}}\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
+					},
+					"response": []
+				},
+				{
+					"name": "Donner les termes occurrences extraites du titre de chaque film.",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"size\": 0,\r\n  \"aggs\": {\r\n    \"title-agg\": {\r\n      \"terms\": {\r\n        \"field\": \"fields.title\"\r\n      }\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://172.26.208.1:9200/movies2/_search?pretty&",
+							"protocol": "https",
+							"host": [
+								"172",
+								"26",
+								"208",
+								"1"
+							],
+							"port": "9200",
+							"path": [
+								"movies2",
+								"_search"
+							],
+							"query": [
+								{
+									"key": "if_seq_no",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this sequence number",
+									"disabled": true
+								},
+								{
+									"key": "if_primary_term",
+									"value": null,
+									"description": "(Optional, integer) Only perform the operation if the document has this primary term",
+									"disabled": true
+								},
+								{
+									"key": "lang",
+									"value": null,
+									"description": "(Optional, string) The script language. Default: painless",
+									"disabled": true
+								},
+								{
+									"key": "refresh",
+									"value": null,
+									"description": "(Optional, enum) If true, Elasticsearch refreshes the affected shards to make this operation visible to search, if wait_for then wait for a refresh to make this operation visible to search, if false do nothing with refreshes. Valid values: true, false, wait_for. Default: false",
+									"disabled": true
+								},
+								{
+									"key": "retry_on_conflict",
+									"value": null,
+									"description": "(Optional, integer) Specify how many times should the operation be retried when a conflict occurs. Default: 0",
+									"disabled": true
+								},
+								{
+									"key": "routing",
+									"value": null,
+									"description": "(Optional, string) Target the specified primary shard",
+									"disabled": true
+								},
+								{
+									"key": "_source",
+									"value": null,
+									"description": "(Optional, list) Set to false to disable source retrieval (default: true). You can also specify a comma-separated list of the fields you want to retrieve.",
+									"disabled": true
+								},
+								{
+									"key": "_source_excludes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to exclude",
+									"disabled": true
+								},
+								{
+									"key": "_source_includes",
+									"value": null,
+									"description": "(Optional, list) Specify the source fields you want to retrieve",
+									"disabled": true
+								},
+								{
+									"key": "master_timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a connection to the master node. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "timeout",
+									"value": null,
+									"description": "(Optional, time units) Specifies the period of time to wait for a response. If no response is received before the timeout expires, the request fails and returns an error. Defaults to 30s",
+									"disabled": true
+								},
+								{
+									"key": "wait_for_active_shards",
+									"value": null,
+									"description": "(Optional, string) The number of shard copies that must be active before proceeding with the operation. Set to all or any positive integer up to the total number of shards in the index (number_of_replicas+1). Default: 1, the primary shard",
+									"disabled": true
+								},
+								{
+									"key": "pretty",
+									"value": null
+								},
+								{
+									"key": null,
+									"value": null
+								}
+							]
+						},
+						"description": "Updates a document using the specified script"
 					},
 					"response": []
 				}
